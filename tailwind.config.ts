@@ -7,7 +7,6 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: '20px',
       screens: {
         lg: '425px',
         md: '375px',
@@ -15,6 +14,9 @@ const config: Config = {
       },
     },
     extend: {
+      padding: {
+        section: '20px',
+      },
       colors: {
         border: 'var(--border)',
         input: 'hsl(var(--input))',
