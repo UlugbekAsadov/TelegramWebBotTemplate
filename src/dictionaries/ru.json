@@ -1,3 +1,8 @@
 {
-  "hi": "privet"
+  "category": {
+    "categories": "Categories"
+  },
+  "common": {
+    "see_all": "See All"
+  }
 }

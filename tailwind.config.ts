@@ -71,6 +71,9 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      boxShadow: {
+        category: '0px 2px 12px 0px #488ACD1F',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
