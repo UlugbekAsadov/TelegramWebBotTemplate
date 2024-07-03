@@ -17,6 +17,12 @@ const config: Config = {
       padding: {
         section: '20px',
       },
+      margin: {
+        section: '20px',
+      },
+      minWidth: {
+        card: '238px',
+      },
       colors: {
         border: 'var(--border)',
         input: 'hsl(var(--input))',
@@ -40,8 +46,8 @@ const config: Config = {
           foreground: 'var(--success-foreground)',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -73,6 +79,9 @@ const config: Config = {
       },
       boxShadow: {
         category: '0px 2px 12px 0px #488ACD1F',
+        courseCard: ' 0px 2px 12px 0px #488ACD1F',
+        seeAllBtn: ' 0px 2px 12px 0px #488ACD1F',
+        primaryShadow: '0px 2px 12px 0px #488ACD1F',
       },
     },
   },

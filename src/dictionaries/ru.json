@@ -2,6 +2,11 @@
   "category": {
     "categories": "Categories"
   },
+  "courses": {
+    "top_courses": "Top Courses",
+    "new_courses": "New Courses",
+    "my_courses": "My Courses"
+  },
   "common": {
     "see_all": "See All"
   }
