@@ -1,9 +1,9 @@
 'use client';
 
 import { Courses } from '@/components/courses/courses';
+import { SeeAll } from '@/components/ui/see-all';
 import { useLocaleContext } from '@/context/locale.context';
 
-import { SeeAll } from '../../ui/see-all';
 
 interface IProps {
   sectionTitle: string;
