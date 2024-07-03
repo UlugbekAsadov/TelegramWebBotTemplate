@@ -30,14 +30,14 @@ export const Categories = forwardRef<HTMLDivElement, IProps>(({ variant, classNa
   return (
     <div ref={ref} className={cn(categoriesVariants({ variant }), className)} {...props}>
       <Category variant={categoryVariant[variant || 'scrollable']} />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
+      <Category variant={categoryVariant[variant || 'scrollable']} />
     </div>
   );
 });

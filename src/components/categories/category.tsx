@@ -1,16 +1,20 @@
 'use client';
 
 import { cva, VariantProps } from 'class-variance-authority';
-import { forwardRef, HTMLProps } from 'react';
+import Link from 'next/link';
+import { AnchorHTMLAttributes, forwardRef } from 'react';
 
 import { Paint } from '@/assets/icons';
+import { ChevronRightIcon } from '@/assets/icons/chevron-right.icon';
 import { cn } from '@/lib/utils';
 
 export const categoryVariants = cva('', {
   variants: {
     variant: {
-      small: 'flex flex-col items-center p-3 bg-white max-w-[72px] w-full shadow-category rounded-xl',
-      large: '',
+      small:
+        'flex gap-2 flex-col items-center p-3 bg-white max-w-[72px] w-full shadow-category rounded-xl [&>p]:text-sm',
+      large:
+        'w-full flex items-center gap-3  bg-card text-card-foreground rounded-full p-4 shadow-category [&>p]:text-base [&>p]:flex-1 [&>div]:block]',
     },
   },
 
@@ -19,16 +23,17 @@ export const categoryVariants = cva('', {
   },
 });
 
-export interface IProps extends HTMLProps<HTMLDivElement>, VariantProps<typeof categoryVariants> {}
+export interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof categoryVariants> {}
 
-export const Category = forwardRef<HTMLDivElement, IProps>(({ variant, className, ...props }, ref) => {
+export const Category = forwardRef<HTMLAnchorElement, IProps>(({ variant, className, href, ...props }, ref) => {
   return (
-    <div ref={ref} className={cn(categoryVariants({ variant }), className)} {...props}>
+    <Link href={href || '#'} ref={ref} className={cn(categoryVariants({ variant }), className)} {...props}>
       <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
         <Paint width={32} height={32} />
       </div>
-      <p className="font-medium text-sm mt-2">Paint</p>
-    </div>
+      <p className="font-medium ">Paint</p>
+      <ChevronRightIcon className={cn('hidden', variant === 'large' && 'block')} />
+    </Link>
   );
 });
 
