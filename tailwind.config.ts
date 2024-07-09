@@ -29,6 +29,7 @@ const config: Config = {
         ring: 'hsl(var(--ring))',
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        videoPlayer: 'var(--video-player',
         primary: {
           DEFAULT: 'var(--primary)',
           foreground: 'var(--primary-foreground)',
