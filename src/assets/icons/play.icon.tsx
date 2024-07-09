@@ -21,3 +21,16 @@ export const VideoPlayIcon = (props: SVGProps<SVGSVGElement>): JSX.Element => {
     </svg>
   );
 };
+
+export const PreviewPlayIcon = (props: SVGProps<SVGSVGElement>): JSX.Element => {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle cx="19.9997" cy="20" r="16.6667" fill="#3E97FF" />
+      <path
+        d="M25.6895 18.235C26.9924 19.0043 26.9924 20.9957 25.6895 21.7649L17.8225 26.4097C16.5562 27.1573 15 26.1842 15 24.6447L15 15.3553C15 13.8158 16.5562 12.8427 17.8225 13.5903L25.6895 18.235Z"
+        stroke="white"
+        stroke-width="1.5"
+      />
+    </svg>
+  );
+};

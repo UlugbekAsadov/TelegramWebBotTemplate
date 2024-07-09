@@ -24,7 +24,7 @@ interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<t
 
 export const CourseCard = ({ className, size, href, ...props }: IProps) => {
   return (
-    <Link href={href || '#'} className={cn(courseCardVariants({ size }), className)} {...props}>
+    <Link href={href || '/courses/:courseId'} className={cn(courseCardVariants({ size }), className)} {...props}>
       <Image src="/mock-images/course-image.png" alt="course-name" width={214} height={143} className="rounded-lg" />
       <CourseDetails size={size} />
     </Link>

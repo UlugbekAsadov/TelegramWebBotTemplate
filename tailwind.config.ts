@@ -83,6 +83,7 @@ const config: Config = {
         courseCard: ' 0px 2px 12px 0px #488ACD1F',
         seeAllBtn: ' 0px 2px 12px 0px #488ACD1F',
         primaryShadow: '0px 2px 12px 0px #488ACD1F',
+        enrollComponentShadow: ' 0px 2px 12px 0px #488ACD1F',
       },
     },
   },
