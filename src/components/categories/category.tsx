@@ -8,7 +8,7 @@ import { Paint } from '@/assets/icons';
 import { ChevronRightIcon } from '@/assets/icons/chevron-right.icon';
 import { cn } from '@/lib/utils';
 
-export const categoryVariants = cva('', {
+export const categoryVariants = cva('cursor-pointer', {
   variants: {
     variant: {
       small:
@@ -27,7 +27,7 @@ export interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement>, Variant
 
 export const Category = forwardRef<HTMLAnchorElement, IProps>(({ variant, className, href, ...props }, ref) => {
   return (
-    <Link href={href || '#'} ref={ref} className={cn(categoryVariants({ variant }), className)} {...props}>
+    <Link href={href || '/categories/:categoryId'} ref={ref} className={cn(categoryVariants({ variant }), className)} {...props}>
       <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
         <Paint width={32} height={32} />
       </div>

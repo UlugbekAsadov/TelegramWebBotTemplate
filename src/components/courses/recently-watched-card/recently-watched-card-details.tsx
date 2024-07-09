@@ -14,8 +14,8 @@ export const RecentlyWatchedCardDetails = () => {
           <span className="text-primary text-xs font-semibold">32%</span>
         </div>
       </div>
-      <Progress value={32} className='mt-3' />
-      <Link href="/courses/my-courses" className="block w-full ">
+      <Progress value={32} className="mt-3" />
+      <Link href="/my-courses" className="block w-full ">
         <Button className="w-full mt-6">{t('courses.my_courses')}</Button>
       </Link>
     </div>

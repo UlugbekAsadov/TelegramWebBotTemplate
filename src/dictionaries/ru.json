@@ -13,7 +13,8 @@
     "about_course": "About course",
     "duration": "{{ duration }} mins",
     "total_price": "Toal price",
-    "enroll_now": "Enroll now"
+    "enroll_now": "Enroll now",
+    "my_courses": "My Courses"
   },
   "common": {
     "see_all": "See All"

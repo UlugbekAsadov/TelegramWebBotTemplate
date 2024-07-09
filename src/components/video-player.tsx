@@ -34,7 +34,7 @@ export const VideoPlayer = forwardRef<HTMLVideoElement, IProps>(() => {
   );
 
   return (
-    <div className="w-full h-fit relative group">
+    <div className="w-full h-fit relative group sticky top-0">
       <div className="player-wrapper">
         <ReactPlayer
           className="react-player"
