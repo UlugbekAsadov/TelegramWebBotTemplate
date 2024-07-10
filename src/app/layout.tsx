@@ -22,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" />
+      </head>
       <body className={cn('bg-background container min-h-dvh', inter.className)}>
         <LocaleContextProvider>
           <ReactQueryProvider>{children}</ReactQueryProvider>

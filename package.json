@@ -23,13 +23,15 @@
     "react-player": "^2.16.0",
     "react-use": "^17.5.0",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "video-react": "^0.16.0"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^5.50.1",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18",
+    "@types/video-react": "^0.15.8",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "eslint-plugin-simple-import-sort": "^12.1.0",
