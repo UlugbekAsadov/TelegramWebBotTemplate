@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 
 import { LocaleContextProvider } from '@/context/locale.context';
+import ReactQueryProvider from '@/context/react-query.context';
 import { cn } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn('bg-background container min-h-dvh', inter.className)}>
-        <LocaleContextProvider>{children}</LocaleContextProvider>
+        <LocaleContextProvider>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </LocaleContextProvider>
       </body>
     </html>
   );
