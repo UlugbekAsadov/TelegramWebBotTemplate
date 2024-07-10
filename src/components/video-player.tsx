@@ -1,8 +1,11 @@
 'use client';
-import { forwardRef, VideoHTMLAttributes } from 'react';
-import ReactPlayer from 'react-player';
+import { forwardRef } from 'react';
+import { SourceProps } from 'react-player/base';
+import ReactPlayer from 'react-player/lazy';
 
-interface IProps extends VideoHTMLAttributes<HTMLVideoElement> {}
+interface IProps {
+  src: string | string[] | SourceProps[] | MediaStream;
+}
 
 export interface IVideoSettings {
   speed: string;
@@ -19,7 +22,7 @@ export type VideoSettingsUpdate =
   | { field: 'isPlaying' | 'fullScreen'; value: boolean }
   | { field: 'currentDuration' | 'currentProgress' | 'totalDuration'; value: number };
 
-export const VideoPlayer = forwardRef<HTMLVideoElement, IProps>(() => {
+export const VideoPlayer = forwardRef<HTMLVideoElement, IProps>(({ src }) => {
   const fallback = (
     <div className="w-full h-full bg-black grid place-content-center">
       <div
@@ -34,13 +37,13 @@ export const VideoPlayer = forwardRef<HTMLVideoElement, IProps>(() => {
   );
 
   return (
-    <div className="w-full h-fit relative group sticky top-0">
+    <div className="w-full h-fit  group sticky top-0 bg-black">
       <div className="player-wrapper">
         <ReactPlayer
           className="react-player"
-          url="https://streamable.com/moo"
+          controls={true}
+          url={src}
           width="100%"
-          stopOnUnmount
           fallback={fallback}
           height="200px"
         />

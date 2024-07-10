@@ -1,27 +1,17 @@
+import { ILesson } from '@/lib/interfaces/lesson.interface';
+
 import { LessonCard } from './lesson-card';
 
-export const Lessons = () => {
+interface IProps {
+  lessons: ILesson[];
+}
+
+export const Lessons = ({ lessons }: IProps) => {
   return (
-    <div>
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
-      <LessonCard />
+    <div className='mt-4'>
+      {lessons.map((lesson, idx) => (
+        <LessonCard key={lesson.id} lesson={lesson} idx={idx} />
+      ))}
     </div>
   );
 };

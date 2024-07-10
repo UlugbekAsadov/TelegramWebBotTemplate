@@ -1,11 +1,13 @@
 import { LessonCard } from '@/components/lessons/lesson-card';
 import { useLocaleContext } from '@/context/locale.context';
+import { ISingleCourse } from '@/lib/interfaces/course.interface';
 
 interface IProps {
   title: string;
+  course: ISingleCourse;
 }
 
-export const CourseSection = ({ title }: IProps) => {
+export const CourseSection = ({ title, course }: IProps) => {
   const { t } = useLocaleContext();
   return (
     <div className="mt-4">
@@ -15,9 +17,9 @@ export const CourseSection = ({ title }: IProps) => {
       </div>
 
       <div className="flex flex-col space-y-2 mt-3">
-        <LessonCard variant="bordered" />
-        <LessonCard variant="bordered" />
-        <LessonCard variant="bordered" />
+        {course.lessons.map((lesson, idx) => {
+          return <LessonCard variant="bordered" key={lesson.id} lesson={lesson} idx={idx} />;
+        })}
       </div>
     </div>
   );
