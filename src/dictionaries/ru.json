@@ -14,7 +14,8 @@
     "duration": "{{ duration }} mins",
     "total_price": "Toal price",
     "enroll_now": "Enroll now",
-    "my_courses": "My Courses"
+    "my_courses": "My Courses",
+    "finished": "Tugatilgan"
   },
   "common": {
     "see_all": "See All"

@@ -27,3 +27,22 @@ const Progress = React.forwardRef<
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
 export { Progress };
+
+const ProgressSmall = React.forwardRef<
+  React.ElementRef<typeof ProgressPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
+>(({ className, value, ...props }, ref) => (
+  <ProgressPrimitive.Root
+    ref={ref}
+    className={cn('relative h-[2px] w-full overflow-hidden rounded-full bg-background', className)}
+    {...props}
+  >
+    <ProgressPrimitive.Indicator
+      className="h-full w-full flex-1 flex items-center px-4 justify-between rounded-full bg-primary transition-all"
+      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+    ></ProgressPrimitive.Indicator>
+  </ProgressPrimitive.Root>
+));
+ProgressSmall.displayName = ProgressPrimitive.Root.displayName;
+
+export { ProgressSmall };
