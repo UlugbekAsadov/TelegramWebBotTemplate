@@ -1,28 +1,28 @@
 {
   "category": {
-    "categories": "Categories"
+    "categories": "Категории"
   },
   "courses": {
-    "top_courses": "Top Courses",
-    "new_courses": "New Courses",
-    "my_courses": "My Courses"
+    "top_courses": "Лучшие курсы",
+    "new_courses": "Новые курсы",
+    "my_courses": "Мои курсы"
   },
   "course": {
-    "preview_title": "Course preview",
-    "lessons": "Lessons",
-    "about_course": "About course",
-    "duration": "{{ duration }} mins",
-    "total_price": "Toal price",
-    "enroll_now": "Enroll now",
-    "my_courses": "My Courses",
-    "finished": "Completed"
+    "preview_title": "Предварительный просмотр курса",
+    "lessons": "Уроки",
+    "about_course": "О курсе",
+    "duration": "{{ duration }} минут",
+    "total_price": "Общая стоимость",
+    "enroll_now": "Записаться сейчас",
+    "my_courses": "Мои курсы",
+    "finished": "Завершено"
   },
   "common": {
-    "see_all": "See All",
+    "see_all": "Смотреть все",
     "currency": "UZS"
   },
   "checkout": {
-    "payment": "Payment",
-    "buy": "Buy"
+    "payment": "Оплата",
+    "buy": "Купить"
   }
 }

@@ -1,3 +1,28 @@
 {
-  "hi": "salom"
+  "category": {
+    "categories": "Kategoriyalar"
+  },
+  "courses": {
+    "top_courses": "Eng yaxshi kurslar",
+    "new_courses": "Yangi kurslar",
+    "my_courses": "Mening kurslarim"
+  },
+  "course": {
+    "preview_title": "Kurs oldindan ko'rish",
+    "lessons": "Darslar",
+    "about_course": "Kurs haqida",
+    "duration": "{{ duration }} daqiqa",
+    "total_price": "Jami narx",
+    "enroll_now": "Hozir yozilish",
+    "my_courses": "Mening kurslarim",
+    "finished": "Tugatilgan"
+  },
+  "common": {
+    "see_all": "Hammasini ko'rish",
+    "currency": "UZS"
+  },
+  "checkout": {
+    "payment": "To'lov",
+    "buy": "Sotib olish"
+  }
 }
