@@ -14,12 +14,12 @@ import { RecentlyWatchedSection } from './sections/recently-watched-section';
 
 export const Homepage = () => {
   const topCoursesQuery = useQuery<IInfinityFetch<ICourse[]>>({
-    queryKey: ['courses', 'top'],
+    queryKey: ['top-courses'],
     queryFn: () => getCoursesQueryFn('-sold'),
   });
   const newCoursesQuery = useQuery<IInfinityFetch<ICourse[]>>({
-    queryKey: ['courses', 'new'],
-    queryFn: () => getCoursesQueryFn('-created'),
+    queryKey: ['new-courses'],
+    queryFn: () => getCoursesQueryFn('-created_at'),
   });
 
   const categoriesQuery = useQuery<ICategory[]>({

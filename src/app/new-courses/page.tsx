@@ -11,7 +11,7 @@ export default async function Page() {
   const queryClient = getQueryClient();
   await queryClient.prefetchInfiniteQuery<IInfinityFetch<ICourse[]>>({
     queryKey: ['courses', 'new'],
-    queryFn: ({ pageParam }) => getCoursesQueryFn('-createdAt', pageParam),
+    queryFn: ({ pageParam }) => getCoursesQueryFn('-created_at', pageParam),
     getNextPageParam: (data) => data.links?.next,
   });
 

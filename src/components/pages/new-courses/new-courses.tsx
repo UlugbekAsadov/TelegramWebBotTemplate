@@ -13,7 +13,7 @@ export const NewCourses = () => {
 
   const newCoursesQuery = useInfiniteQuery<IInfinityFetch<ICourse[]>>({
     queryKey: ['courses', 'new'],
-    queryFn: ({ pageParam }) => getCoursesQueryFn('-createdAt', pageParam),
+    queryFn: ({ pageParam }) => getCoursesQueryFn('-created_at', pageParam),
     getNextPageParam: (data) => data.links?.next,
   });
 

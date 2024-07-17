@@ -10,9 +10,9 @@ function ReactQueryProvider({ children }: PropsWithChildren) {
       defaultOptions: {
         queries: {
           staleTime: 5000,
-          refetchOnWindowFocus: false,
-          refetchOnMount: false,
-          refetchOnReconnect: false,
+          refetchOnWindowFocus: true,
+          refetchOnMount: true,
+          refetchOnReconnect: true,
           retry: false,
         },
       },

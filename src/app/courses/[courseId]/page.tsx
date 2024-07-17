@@ -22,7 +22,7 @@ export default async function Page({ params }: IProps) {
 
   return (
     <Hydrate state={dehydratedState}>
-      <CoursePage courseId={courseId} />;
+      <CoursePage courseId={courseId} />
     </Hydrate>
   );
 }
