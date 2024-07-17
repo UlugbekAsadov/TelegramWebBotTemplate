@@ -22,7 +22,7 @@ function ReactQueryProvider({ children }: PropsWithChildren) {
   return (
     <QueryClientProvider client={client}>
       {children}
-      <ReactQueryDevtools initialIsOpen={false} position="bottom" />
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }
