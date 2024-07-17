@@ -1,8 +1,8 @@
 import Image from 'next/image';
+import { HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IPaymentMethod } from '@/lib/interfaces/checkout.interface';
-import { HTMLAttributes } from 'react';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   method: IPaymentMethod;

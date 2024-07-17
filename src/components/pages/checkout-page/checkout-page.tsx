@@ -1,16 +1,16 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
+import { CheckoutBuyButton } from '@/components/checkout/buy-button';
+import { PaymentMethods } from '@/components/checkout/payment-methods/payment-methods';
 import { MyCourseCard } from '@/components/courses/course-card/my-course-card/my-course-card';
 import { useLocaleContext } from '@/context/locale.context';
-import { ISingleCourse } from '@/lib/interfaces/course.interface';
-import { getCourseQueryFn } from '@/react-query/queries/courses.query';
-import { PaymentMethods } from '@/components/checkout/payment-methods/payment-methods';
-import { useState } from 'react';
 import { IPaymentMethod } from '@/lib/interfaces/checkout.interface';
+import { ISingleCourse } from '@/lib/interfaces/course.interface';
 import { paymentMethods } from '@/lib/mock/payment.method.mock';
-import { CheckoutBuyButton } from '@/components/checkout/buy-button';
+import { getCourseQueryFn } from '@/react-query/queries/courses.query';
 
 interface IProps {
   courseId: string;

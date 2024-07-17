@@ -1,12 +1,12 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
+import { AnchorHTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { ISingleCourse } from '@/lib/interfaces/course.interface';
 
 import { MyCourseCardDetails } from './my-course-card-details';
-import { AnchorHTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
-import Link from 'next/link';
 
 interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   isBought: boolean;

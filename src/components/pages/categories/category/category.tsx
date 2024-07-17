@@ -1,11 +1,12 @@
 'use client';
 
+import { useInfiniteQuery } from '@tanstack/react-query';
+
 import { CourseCard } from '@/components/courses/course-card/course-card';
 import { useLocaleContext } from '@/context/locale.context';
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
-import { getCategoryQueryFn } from '@/react-query/queries/categories.query';
-import { IInfinityFetch } from '@/lib/interfaces/react-query.interface';
 import { ICourse } from '@/lib/interfaces/course.interface';
+import { IInfinityFetch } from '@/lib/interfaces/react-query.interface';
+import { getCategoryQueryFn } from '@/react-query/queries/categories.query';
 
 interface IProps {
   categoryId: string;
