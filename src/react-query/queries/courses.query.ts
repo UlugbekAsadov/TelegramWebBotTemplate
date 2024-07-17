@@ -1,7 +1,7 @@
 import fetcher from '@/lib/fetcher';
 
-export const getCoursesQueryFn = (sort: string) =>
-  fetcher(`/courses${sort && `?sort=${sort}`}`)
+export const getCoursesQueryFn = (sort: string, pageParam?: string) =>
+  fetcher(pageParam || `/courses${sort && `?sort=${sort}`}`)
     .then((res) => res.json())
     .then((data) => data);
 

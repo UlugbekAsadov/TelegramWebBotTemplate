@@ -2,7 +2,6 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import NextTopLoader from 'nextjs-toploader';
 import { ReactNode } from 'react';
 
@@ -24,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" />
-      </Head>
+      </head>
       <body className={cn('bg-background container min-h-dvh', inter.className)}>
         <NextTopLoader />
         <LocaleContextProvider>

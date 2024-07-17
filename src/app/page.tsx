@@ -2,9 +2,9 @@ import { dehydrate } from '@tanstack/react-query';
 
 import { Homepage } from '@/components/pages/home-page/homepage';
 import Hydrate from '@/react-query/hydrate-client';
+import { getCategoriesQueryFn } from '@/react-query/queries/categories.query';
 import { getCoursesQueryFn } from '@/react-query/queries/courses.query';
 import getQueryClient from '@/react-query/query-client';
-import { getCategoriesQueryFn } from '@/react-query/queries/categories.query';
 
 export default async function Home() {
   const queryClient = getQueryClient();
@@ -15,12 +15,12 @@ export default async function Home() {
   });
 
   await queryClient.prefetchQuery({
-    queryKey: ['courses', 'top'],
+    queryKey: ['top-courses'],
     queryFn: () => getCoursesQueryFn('-sold'),
   });
 
   await queryClient.prefetchQuery({
-    queryKey: ['courses', 'new'],
+    queryKey: ['new-courses'],
     queryFn: () => getCoursesQueryFn('-created_at'),
   });
 
