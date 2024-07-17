@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 const lessonCardVariants = cva('w-full  flex items-center gap-3  cursor-pointer', {
   variants: {
     variant: {
-      default: 'border-b last:border-none',
+      default: 'border-b  py-2',
       bordered: 'border rounded-full p-2.5',
     },
   },
