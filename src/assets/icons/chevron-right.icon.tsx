@@ -6,9 +6,9 @@ export const ChevronRightIcon = (props: SVGProps<SVGSVGElement>): JSX.Element =>
       <path
         d="M7.5 4.16699L12.5 10.0003L7.5 15.8337"
         stroke="#171717"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

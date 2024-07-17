@@ -1,11 +1,12 @@
 'use client';
 
 import { cva, VariantProps } from 'class-variance-authority';
+import Image from 'next/image';
 import Link from 'next/link';
 import { AnchorHTMLAttributes, forwardRef } from 'react';
 
-import { Paint } from '@/assets/icons';
 import { ChevronRightIcon } from '@/assets/icons/chevron-right.icon';
+import { ICategory } from '@/lib/interfaces/categories.interface';
 import { cn } from '@/lib/utils';
 
 export const categoryVariants = cva('cursor-pointer', {
@@ -23,18 +24,27 @@ export const categoryVariants = cva('cursor-pointer', {
   },
 });
 
-export interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof categoryVariants> {}
+export interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof categoryVariants> {
+  category: ICategory;
+}
 
-export const Category = forwardRef<HTMLAnchorElement, IProps>(({ variant, className, href, ...props }, ref) => {
-  return (
-    <Link href={href || '/categories/:categoryId'} ref={ref} className={cn(categoryVariants({ variant }), className)} {...props}>
-      <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
-        <Paint width={32} height={32} />
-      </div>
-      <p className="font-medium ">Paint</p>
-      <ChevronRightIcon className={cn('hidden', variant === 'large' && 'block')} />
-    </Link>
-  );
-});
+export const Category = forwardRef<HTMLAnchorElement, IProps>(
+  ({ variant, className, href, category, ...props }, ref) => {
+    return (
+      <Link
+        href={href || '/categories/:categoryId'}
+        ref={ref}
+        className={cn(categoryVariants({ variant }), className)}
+        {...props}
+      >
+        <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+          <Image src={category.image} alt={category.title} width={42} height={42} />
+        </div>
+        <p className="font-medium ">{category.title}</p>
+        <ChevronRightIcon className={cn('hidden', variant === 'large' && 'block')} />
+      </Link>
+    );
+  }
+);
 
 Category.displayName = 'Category';
