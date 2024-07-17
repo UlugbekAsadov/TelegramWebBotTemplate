@@ -14,16 +14,16 @@ export const PreviousIcon = (props: SVGProps<SVGSVGElement>): JSX.Element => {
       <path
         d="M9.16 5.74065C10.3656 5.3337 11.6571 5.1131 13 5.1131C19.6274 5.1131 25 10.4857 25 17.1131C25 23.7405 19.6274 29.1131 13 29.1131C6.37258 29.1131 1 23.7405 1 17.1131C1 15.2185 1.43908 13.4264 2.22102 11.8331"
         stroke="#FCFCFF"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.1268 1.00002L6.92446 6.54659L12.471 9.7489"
         stroke="#FCFCFF"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
