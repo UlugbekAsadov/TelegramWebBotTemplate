@@ -1,13 +1,34 @@
 'use client';
 import Image from 'next/image';
 
-import { MyCourseCardDetails } from './my-course-card-details';
+import { ISingleCourse } from '@/lib/interfaces/course.interface';
 
-export const MyCourseCard = () => {
+import { MyCourseCardDetails } from './my-course-card-details';
+import { AnchorHTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
+import Link from 'next/link';
+
+interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  isBought: boolean;
+  course: ISingleCourse;
+}
+
+export const MyCourseCard = ({ isBought, course, className, ...props }: IProps) => {
+  const mockImage = `/mock-images/my-course-image.png`;
   return (
-    <div className="bg-card py-4 px-3 rounded-lg shadow-courseCard">
-      <Image src="/mock-images/my-course-image.png" alt="my_course" width={425} height={250} className="object-cover" />
-      <MyCourseCardDetails />
-    </div>
+    <Link
+      href={`/courses/${course.id}`}
+      className={twMerge('bg-card py-4 px-3 rounded-lg shadow-courseCard block', className)}
+      {...props}
+    >
+      <Image
+        src={course.image || mockImage}
+        alt="my_course"
+        width={425}
+        height={250}
+        className="object-cover rounded-xl"
+      />
+      <MyCourseCardDetails course={course} isBought={isBought} />
+    </Link>
   );
 };

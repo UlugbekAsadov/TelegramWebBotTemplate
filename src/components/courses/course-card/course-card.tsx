@@ -11,6 +11,7 @@ import { CourseDetails } from './course-details';
 const courseCardVariants = cva('rounded-xl bg-card text-card-foreground w-full shadow-courseCard', {
   variants: {
     size: {
+      wide: 'w-full p-3',
       medium: 'min-w-card p-3 ',
       small: 'max-w-card p-2',
     },

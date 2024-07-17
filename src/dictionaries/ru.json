@@ -15,9 +15,14 @@
     "total_price": "Toal price",
     "enroll_now": "Enroll now",
     "my_courses": "My Courses",
-    "finished": "Tugatilgan"
+    "finished": "Completed"
   },
   "common": {
-    "see_all": "See All"
+    "see_all": "See All",
+    "currency": "UZS"
+  },
+  "checkout": {
+    "payment": "Payment",
+    "buy": "Buy"
   }
 }

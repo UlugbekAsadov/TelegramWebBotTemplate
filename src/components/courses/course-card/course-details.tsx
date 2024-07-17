@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 const courseDetailsVariants = cva('mt-3', {
   variants: {
     size: {
+      wide: '',
       medium: '[&>p]:text-base [&>p]:line-clamp-1 [&>div>span]:text-sm ',
       small: '[&>p]:text-sm  [&>p]:line-clamp-2 [&>div>span]:text-xs',
     },
