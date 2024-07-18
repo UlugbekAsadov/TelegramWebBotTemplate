@@ -30,6 +30,10 @@ export const CheckoutPage = ({ courseId }: IProps) => {
     return;
   }
 
+  const createOrder = async () => {
+    router.push(`/checkout/${courseId}/success`);
+  };
+
   return (
     <div className="p-section min-h-dvh">
       <h2 className="text-foreground text-2xl font-semibold">{t('checkout.payment')}</h2>
@@ -38,7 +42,7 @@ export const CheckoutPage = ({ courseId }: IProps) => {
         selectedPaymentMethod={selectedPaymentMethod}
         setSelectedPaymentMethod={setSelectedPaymentMethod}
       />
-      <CheckoutBuyButton onClick={() => {}} />
+      <CheckoutBuyButton onClick={createOrder} />
     </div>
   );
 };

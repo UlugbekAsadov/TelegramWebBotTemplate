@@ -23,6 +23,11 @@
   },
   "checkout": {
     "payment": "To'lov",
-    "buy": "Sotib olish"
+    "buy": "Sotib olish",
+    "thank_you_for_purchase": "Xaridingiz uchun tashakkur",
+    "thank_you_for_purchasing_product": "Siz {{ courseName }} kursini xarid qildingiz. Kursni mening kurslarim sahifasidan topishingiz mumkun.",
+    "error_while_purchasing_product": "{{ courseName }} kursini sotib olishda kutilmagan xatolik bo'ldi. Qaytadan urunib ko'ring yoki adminlar bilan bog'lnaning.",
+    "move_to_my_courses": "Kurslarimga o'tish",
+    "go_back": "Ortga qaytish"
   }
 }

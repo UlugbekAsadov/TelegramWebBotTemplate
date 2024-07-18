@@ -23,6 +23,11 @@
   },
   "checkout": {
     "payment": "Оплата",
-    "buy": "Купить"
+    "buy": "Купить",
+    "thank_you_for_purchase": "Спасибо за покупку",
+    "thank_you_for_purchasing_product": "Вы приобрели курс {{ courseName }}. Вы можете найти курс на странице моих курсов.",
+    "error_while_purchasing_product": "Произошла неожиданная ошибка при покупке курса {{ courseName }}. Попробуйте снова или свяжитесь с администрацией.",
+    "move_to_my_courses": "Перейти к моим курсам",
+    "go_back": "Вернуться назад"
   }
 }
