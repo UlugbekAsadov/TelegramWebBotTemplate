@@ -1,6 +1,6 @@
 import { dehydrate } from '@tanstack/react-query';
 
-import { LessonPage } from '@/components/pages/lesson-page/lesson-page';
+import { LessonPage } from '@/pages/lesson-page/lesson-page';
 import Hydrate from '@/react-query/hydrate-client';
 import { getCourseQueryFn } from '@/react-query/queries/courses.query';
 import { getLessonQueryFn } from '@/react-query/queries/lesson.query';

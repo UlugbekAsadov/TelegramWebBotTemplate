@@ -1,6 +1,6 @@
 import { dehydrate } from '@tanstack/react-query';
 
-import { CategoriesPage } from '@/components/pages/categories/categories';
+import { CategoriesPage } from '@/pages/categories/categories';
 import Hydrate from '@/react-query/hydrate-client';
 import { getCategoriesQueryFn } from '@/react-query/queries/categories.query';
 import getQueryClient from '@/react-query/query-client';

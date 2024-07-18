@@ -1,8 +1,8 @@
 import { dehydrate } from '@tanstack/react-query';
 
-import { TopCourses } from '@/components/pages/top-courses/top-courses';
 import { ICourse } from '@/lib/interfaces/course.interface';
 import { IInfinityFetch } from '@/lib/interfaces/react-query.interface';
+import { TopCourses } from '@/pages/top-courses/top-courses';
 import Hydrate from '@/react-query/hydrate-client';
 import { getCoursesQueryFn } from '@/react-query/queries/courses.query';
 import getQueryClient from '@/react-query/query-client';
