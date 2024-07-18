@@ -1,38 +1,32 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 'use client';
-
 import { createContext, PropsWithChildren, ReactNode, useContext, useEffect, useState } from 'react';
 import { useLocalStorage } from 'react-use';
 
 import { defaultLocale, getTranslator, ValidLocale } from '@/i18n';
 
-interface IContext {
-  t: (
-    key: string,
-    params?:
-      | {
-          [key: string]: string | number;
-        }
-      | undefined
-  ) => ReactNode;
+export type TranslationParams = {
+  [key: string]: string | number;
+};
+
+interface ITranslationContext {
+  t: (key: string, params?: TranslationParams) => ReactNode;
   setLang: (lang: ValidLocale) => void;
   lang: ValidLocale;
 }
 
-interface IProps {
+interface ITranslationProps {
   children: ReactNode;
 }
 
-const LocaleContext = createContext<IContext>({} as IContext);
+const LocaleContext = createContext<ITranslationContext>({} as ITranslationContext);
 
 export const useLocaleContext = () => useContext(LocaleContext);
 
-function useDelayedRender<T>(asyncFun: () => Promise<T>, deps: string[] = []) {
+function useDelayedRender<T>(asyncFun: () => Promise<T>, deps: ValidLocale[] = []) {
   const [output, setOutput] = useState<T>();
 
   useEffect(() => {
-    (async function () {
+    (async () => {
       try {
         setOutput(await asyncFun());
       } catch (e) {
@@ -40,16 +34,16 @@ function useDelayedRender<T>(asyncFun: () => Promise<T>, deps: string[] = []) {
       }
     })();
   }, deps);
-  return output === undefined ? null : output;
+
+  return output ?? null;
 }
 
-export const LocaleContextProvider = ({ children }: PropsWithChildren<IProps>) => {
-  const [lang, setLang] = useLocalStorage<ValidLocale>('magicbot-edu-lang', defaultLocale);
-  const currentLang = lang || defaultLocale;
+export const LocaleContextProvider = ({ children }: PropsWithChildren<ITranslationProps>) => {
+  const [lang, setLang] = useLocalStorage<ValidLocale>('lang', defaultLocale);
+  const currentLang: ValidLocale = lang || defaultLocale;
 
   return useDelayedRender(async () => {
-    const translate = await getTranslator(currentLang, []);
-
+    const translate = await getTranslator(currentLang);
     const value = {
       t: translate,
       setLang,

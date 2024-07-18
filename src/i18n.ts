@@ -1,28 +1,35 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export const defaultLocale: ValidLocale = 'ru';
-export const locales = ['ru', 'uz'] as const;
+export const defaultLocale: ValidLocale = 'uz';
+
+export const locales = ['uz', 'ru'];
+
 export type ValidLocale = (typeof locales)[number];
 
-const dictionaries: Record<ValidLocale, any> = {
-  ru: () => import('./dictionaries/ru.json').then((module) => module.default),
-  uz: () => import('./dictionaries/uz.json').then((module) => module.default),
-} as const;
+const dictionaries: Record<ValidLocale, () => Promise<string>> = {
+  uz: () => import('./dictionaries/uz.json').then((module) => module.default) as Promise<string>,
+  ru: () => import('./dictionaries/ru.json').then((module) => module.default) as Promise<string>,
+};
 
-export const getTranslator = async (locale: ValidLocale, translations: object[]) => {
-  let dictionary = await dictionaries[locale]();
-  if (translations.length) {
-    dictionary = translations[locales.indexOf(locale)];
-  }
-  return (key: string, params?: { [key: string]: string | number }) => {
-    let translation = key.split('.').reduce((obj, key) => obj && obj[key], dictionary);
+export const getTranslator = async (locale: ValidLocale) => {
+  const dictionary = await dictionaries[locale]();
+
+  return getTranslatedValue(dictionary);
+};
+
+function getTranslatedValue(dictionary: string) {
+  return (translationKey: string, params?: { [key: string]: string | number }) => {
+    const keys: string[] = translationKey.split('.');
+    let translation: string = keys.reduce((obj, key) => obj && obj[key as unknown as number], dictionary);
+
     if (!translation) {
-      return key;
+      return translationKey;
     }
+
     if (params && Object.entries(params).length) {
       Object.entries(params).forEach(([key, value]) => {
         translation = translation!.replace(`{{ ${key} }}`, String(value));
       });
     }
+
     return translation;
   };
-};
+}
