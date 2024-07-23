@@ -1,6 +1,6 @@
 import { dehydrate } from '@tanstack/react-query';
 
-import { Homepage } from '@/pages/home-page/homepage';
+import { Homepage } from '@/pages/home-page/home-page';
 import Hydrate from '@/react-query/hydrate-client';
 import { getCategoriesQueryFn } from '@/react-query/queries/categories.query';
 import { getCoursesQueryFn } from '@/react-query/queries/courses.query';
