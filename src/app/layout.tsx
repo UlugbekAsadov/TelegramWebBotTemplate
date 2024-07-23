@@ -7,6 +7,7 @@ import { ReactNode } from 'react';
 
 import { LocaleContextProvider } from '@/context/locale.context';
 import ReactQueryProvider from '@/context/react-query.context';
+import { InitTelegramLayout } from '@/layout/init-telegram.layout';
 import { cn } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -23,14 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" />
-      </head>
       <body className={cn('bg-background container min-h-dvh', inter.className)}>
         <NextTopLoader />
-        <LocaleContextProvider>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
-        </LocaleContextProvider>
+        <InitTelegramLayout>
+          <LocaleContextProvider>
+            <ReactQueryProvider>{children}</ReactQueryProvider>
+          </LocaleContextProvider>
+        </InitTelegramLayout>
       </body>
     </html>
   );
